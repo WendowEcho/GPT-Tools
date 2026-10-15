@@ -1,24 +1,18 @@
 # GPT Tools — Project State
 
-## Repository
-- Owner: WendowEcho
-- Repository: GPT-Tools
-- Visibility: Public
+## Release
 - Version: 0.5.0
+- Platform: Microsoft Edge
+- Target: https://chatgpt.com/
 
-## Scope
-- Microsoft Edge browser extension for ChatGPT.
-- Focus on bounded rendering optimization for long conversations.
-- No terminal execution, Native Messaging Host, or clipboard features.
-
-## Repository Migration
-- Extracted from BoZhangCS/Tools/gpt tools.
-- Uses independent Git history.
-- Original repository remains unchanged.
-- SSH alias: github-gpttools.
+## Features
+- Bounded rendering for long conversations.
+- Keeps historical conversation turns accessible.
+- Configurable rendering window (1–10 turns; default 3).
+- Toggle to enable or disable optimization.
 
 ## Maintenance
-- Keep extension logic lightweight.
-- Minimize DOM traversal and redundant observers.
-- Reuse existing state and observers whenever possible.
-- Validate changes before publishing.
+- Keep DOM observation incremental and reuse observers.
+- Avoid repeated full-conversation scans.
+- Package the `extension/` directory for each GitHub Release.
+- Keep README focused on features and installation.
