@@ -1,0 +1,13 @@
+.DS_Store
+*.pyc
+__pycache__/
+
+.env
+.env.*
+*.pem
+*.key
+node_modules/
+.DS_Store
+__pycache__/
+*.pyc
+*.log

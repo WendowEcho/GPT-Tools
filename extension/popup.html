@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>GPT Tools — Bounded Render</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <h1 class="title">长对话渲染优化</h1>
+  <div class="setting-row">
+    <span class="setting-label">启用优化</span>
+    <label class="toggle">
+      <input type="checkbox" id="bounded-render" checked>
+      <span class="toggle-slider"></span>
+    </label>
+  </div>
+  <div class="render-window-section" id="render-window-section">
+    <div class="section-label">渲染窗口</div>
+    <label class="render-window-control">
+      <input id="render-window-turns" type="range" min="1" max="10" step="1" value="3">
+      <output id="render-window-value" for="render-window-turns">3 轮</output>
+    </label>
+    <div class="section-hint">仅让附近的对话轮次保持活跃；远处的历史内容暂缓布局。</div>
+  </div>
+  <script src="shared/settings.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

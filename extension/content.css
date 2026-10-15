@@ -1,0 +1,9 @@
+/*
+ * Render-only containment. Only classified cold conversation turns are hidden.
+ * Warm, active and unrecognized nodes use their original ChatGPT appearance.
+ */
+html[data-gpt-tools-bounded-render-active="true"]
+  [data-testid^="conversation-turn-"][data-gpt-tools-bounded-render-tier="cold"] {
+  content-visibility: hidden !important;
+  contain-intrinsic-size: auto 240px !important;
+}

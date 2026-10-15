@@ -1,0 +1,151 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: #fff;
+  color: #1a1a1a;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  margin: 0;
+  min-width: 240px;
+  padding: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #1e1e1e;
+    color: #e0e0e0;
+  }
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 14px 0;
+  text-align: center;
+}
+
+.setting-row {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  min-height: 32px;
+}
+
+.setting-label {
+  font-size: 14px;
+}
+
+/* Toggle switch */
+.toggle {
+  cursor: pointer;
+  display: inline-block;
+  height: 22px;
+  position: relative;
+  width: 40px;
+}
+
+.toggle input {
+  height: 0;
+  opacity: 0;
+  position: absolute;
+  width: 0;
+}
+
+.toggle-slider {
+  background-color: #ccc;
+  border-radius: 22px;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: background-color 180ms ease;
+}
+
+.toggle-slider::before {
+  background-color: #fff;
+  border-radius: 50%;
+  bottom: 2px;
+  content: "";
+  height: 18px;
+  left: 2px;
+  position: absolute;
+  transition: transform 180ms ease;
+  width: 18px;
+}
+
+.toggle input:checked + .toggle-slider {
+  background-color: #10a37f;
+}
+
+.toggle input:checked + .toggle-slider::before {
+  transform: translateX(18px);
+}
+
+.toggle input:focus-visible + .toggle-slider {
+  outline: 2px solid #10a37f;
+  outline-offset: 2px;
+}
+
+/* Render window section */
+.render-window-section {
+  margin-bottom: 10px;
+  padding-left: 8px;
+}
+
+.render-window-section.hidden {
+  display: none;
+}
+
+.section-label {
+  color: #888;
+  font-size: 11px;
+  margin-bottom: 6px;
+}
+
+.render-window-control {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+}
+
+.render-window-control input[type="range"] {
+  accent-color: #10a37f;
+  cursor: pointer;
+  flex: 1;
+  min-width: 0;
+}
+
+.render-window-control output {
+  color: #10a37f;
+  flex: 0 0 46px;
+  font-size: 12px;
+  text-align: right;
+}
+
+.section-hint {
+  color: #555;
+  font-size: 10px;
+  margin-top: 4px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .section-label {
+    color: #888;
+  }
+  .section-hint {
+    color: #aaa;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .toggle-slider {
+    background-color: #555;
+  }
+}
